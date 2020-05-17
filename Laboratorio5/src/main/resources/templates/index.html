@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ingrese un estudiante</h1>
+
+    <form th:action="@{/validar}" th:object="${estudiante}" method="POST">
+    
+        <label for="nombre">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" th:field="*{nombre}" placeholder="Diego">
+        <br>
+        <span th:errors="*{nombre}" style="color: red"></span>
+        <br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" id="apellido" name="apellido" th:field="*{apellido}" placeholder="Vega">
+        <br>
+        <span th:errors="*{apellido}" style="color: red"></span>
+        <br>
+        <label for="carne">Carne: </label>
+        <input type="text" id="carne" name="carne" th:field="*{carne}" placeholder="00000000">
+        <br>
+        <span th:errors="*{carne}" style="color: red"></span>
+        <br>
+        <label for="carrera">Carrera: </label>
+        <input type="text" id="carrera" name="carrera" th:field="*{carrera}" placeholder="Ing. Infromatica">
+        <br>
+        <span th:errors="*{carrera}" style="color: red"></span>
+        <br>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <a href="/listado">Ver listado de estudiantes</a>
+</body>
+</html>
