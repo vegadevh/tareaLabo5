@@ -34,6 +34,13 @@
         <input type="submit" value="Enviar">
     </form>
 
+    <form th:action="@{/borrar}" th:object="${estudiante}" method="POST">
+        <label for="code">Elimnar mediante codigo de estudiante: </label>
+        <input type="number" name="code" id="code" th:field="*{c_usuario}">
+        <br>
+        <input type="submit" value="Eliminar">
+    </form>
+
     <a href="/listado">Ver listado de estudiantes</a>
 </body>
 </html>
